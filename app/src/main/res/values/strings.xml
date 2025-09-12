@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MedicineDosage</string>
+    <string-array name="arr_nDosesDay">
+        <item>Selecione ...</item>
+        <item>1 dose  </item>
+        <item>2 doses </item>
+        <item>3 doses </item>
+        <item>4 doses </item>
+        <item>6 doses </item>
+    </string-array>
+</resources>
