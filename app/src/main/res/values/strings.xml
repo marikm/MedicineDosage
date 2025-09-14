@@ -8,4 +8,9 @@
         <item>4 doses </item>
         <item>6 doses </item>
     </string-array>
+
+    <string-array name="arr_nConcetration">
+        <item>mg/ml (Líquido)</item>
+        <item>mg/un (comprimido/cápsula)</item>
+    </string-array>
 </resources>

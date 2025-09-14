@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -61,40 +61,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/icon_background_blue"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_scale"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:text="Peso (kg)"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/edtWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/text_field_background"
-                android:inputType="numberDecimal"
-                android:textColor="@color/text_secondary"
-                android:hint="Ex: 70kg"
-                android:textSize="16sp"
-                android:padding="10dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
@@ -127,41 +93,99 @@
                 android:padding="10dp"
                 android:textSize="16sp"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/icon_background_orange"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_calendar"/>
-
-                <TextView
+                android:layout_height="wrap_content">
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:text="Dose por kg (mg/kg): "
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/layoutWeight"
+                        android:layout_alignParentLeft="true"
+                        >
 
-            <EditText
-                android:id="@+id/edtDoseKg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/text_primary"
-                android:background="@drawable/text_field_background"
-                android:inputType="number"
-                android:hint="Ex: 10"
-                android:padding="10dp"
-                android:textSize="16sp"
-                />
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/icon_background_blue"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_scale" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Peso (kg)"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <EditText
+                        android:id="@+id/edtWeight"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/text_field_background"
+                        android:hint="Ex: 70kg"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        android:layout_below="@id/edtDoseKg"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentRight="true">
+
+                    <LinearLayout
+                        android:id="@+id/layoutDoseKg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_alignParentRight="true"
+                        >
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/icon_background_orange"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_calendar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="Dose por kg (mg/kg): "
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edtDoseKg"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/text_field_background"
+                        android:hint="Ex: 10"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:layout_alignParentRight="true"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -181,11 +205,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="Dose por kg (mg/kg): "
+                    android:text="Doses por dia "
                     android:textStyle="bold" />
             </LinearLayout>
             <Spinner
-                android:id="@+id/spinner_doses"
+                android:id="@+id/spiDoses"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:background="@drawable/stroke_field"
@@ -195,10 +219,247 @@
                 android:paddingEnd="12dp"
                 android:entries="@array/arr_nDosesDay"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/icon_background_teal"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="@color/teal_600"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Duração do tratamento (dias): "
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtnDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/text_field_background"
+                android:inputType="number"
+                android:hint="Ex: 7"
+                android:padding="10dp"
+                android:textSize="16sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/icon_background_purple"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_pill"
+                    app:tint="@color/purple_600"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Tipo de concentração: "
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <Spinner
+                android:id="@+id/spiTypeConc"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/stroke_field"
+                android:spinnerMode="dropdown"
+                android:layout_marginTop="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:entries="@array/arr_nConcetration"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/icon_background_red"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_scale"
+                    app:tint="@color/red_600"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Concentração do medicamento"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true">
+                    <EditText
+                        android:id="@+id/edtMg"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/text_field_background"
+                        android:hint="Ex: 500"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/txtMg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="mg"
+                        android:textColor="@color/gray_600"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textSize="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginStart="175dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentRight="true">
+                    <EditText
+                        android:id="@+id/edtMlUn"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/text_field_background"
+                        android:hint="Ex: 500"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ml"
+                        android:textColor="@color/gray_600"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/txtMlUn"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/icon_background_red"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_alerttriangle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Máximo diário permitido (mg/dia) - Opicional "
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtMaxDose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/text_field_background"
+                android:inputType="number"
+                android:hint="Ex: 4000"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/icon_background_teal"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_clock"
+                    app:tint="@color/teal_600"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="Horário da primeira dose"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtFirstDose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/text_field_background"
+                android:inputType="time"
+                android:hint="Ex: 8:00"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:clickable="true"/>
         </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCalculate"
+            android:text="Gerar Plano de Doses"
+            android:backgroundTint="@color/green_600"
+            />
 
 
     </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>
